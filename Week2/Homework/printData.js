@@ -12,7 +12,7 @@ ON a.mentor = m.author_no;
 const printAuthorsTablePaperTitle  = `
   SELECT a.*, r.paper_title FROM registration e 
   LEFT JOIN authors a ON e.author_no = a.author_no
-  LEFT JOIN research_Papers r ON r.paper_id = e.paper_id
+  LEFT JOIN researchPapers r ON r.paper_id = e.paper_id
   ORDER BY  a.author_no;
 `;
 

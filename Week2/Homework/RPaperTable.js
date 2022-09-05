@@ -1,5 +1,5 @@
 const CreateResearchPapersTable = `
-  CREATE TABLE researchPapers(
+  CREATE TABLE if not exists researchPapers (
     paper_id INT PRIMARY KEY, 
     paper_title VARCHAR(255), 
     conference VARCHAR(255), 
@@ -7,9 +7,9 @@ const CreateResearchPapersTable = `
     );
     `;
 
-    
+
 const CreateRegistrationTable = `
-CREATE TABLE registration(
+CREATE TABLE if not exists registration(
   registration_id INT PRIMARY KEY,
   author_no INT,
   paper_id INT,
@@ -18,29 +18,28 @@ CREATE TABLE registration(
   );
   `;
 
-  const authorsData = `
+const authorsData = `
   INSERT INTO authors (author_no, author_name, university, date_of_birth, h_index, gender, mentor)  VALUES
-
     ( 1, "Robin", "Amsterdam", "1985-08-13", 100,"M", NULL ),
-    ( 2,"Oscar", "London", "15-03-1987", 360,"M", 1),
-    ( 3,"Jasmine, "Egypt", "13-12-1996", 400, "F", 3),
-    ( 4,"Robby", "US", "20-02-1976, 255", "F", NULL ),
+    ( 2,"Oscar", "London", "1985-12-13", 360,"M", 1),
+    ( 3,"Jasmine", "Egypt", "1985-07-13", 400, "F", 3),
+    ( 4,"Robby", "US", "1988-08-13", "255", "F", 8 ),
     ( 5,"Jack", "Amsterdam", "1985-08-13", 100,"M", 7 ),
-    ( 6,"Kalyan","London", "15-03-1987", 360,"M", 1),
-    ( 7,"Lora", "Egypt", "13-12-1996", 400, "F", 3),
-    ( 8, "Kay","US", "20-02-1976", 255, "F", 5 ),
+    ( 6,"Kalyan","London", "1985-08-13", 360,"M", 1),
+    ( 7,"Lora", "Egypt", "1985-08-13", 400, "F", 3),
+    ( 8, "Kay","US", "1985-08-13", 255, "F", 5 ),
     ( 9,"Leo", "Amsterdam", "1985-08-13", 100,"M", NULL ),
-    ( 10, "Omar","London", "15-03-1987", 360,"M", 1),
-    ( 11, "Fatima","Egypt", "13-12-1996", 400, "F", 10),
-    ( 12, "Layla","US", "20-02-1976", 255, "F", 6),
+    ( 10, "Omar","London","1985-08-13", 360,"M", 1),
+    ( 11, "Fatima","Egypt","1985-08-13", 400, "F", 10),
+    ( 12, "Layla","US", "1985-08-13", 255, "F", 6),
     ( 13,"leonard","Amsterdam", "1985-08-13", 100,"M", 6 ),
-    ( 14, "Amar","London", "15-03-1987", 360,"M", 1),
-    ( 15,"Baraah", "US", "20-02-1976", 255, "F", 9 );
+    ( 14, "Amar","London", "1985-08-13", 360,"M", 1),
+    ( 15,"Baraah", "US", "1985-08-13", 255, "F", 9 );
 `;
 
 
 const researchPapersData = `
-  INSERT INTO research_Papers (paper_id, paper_title, conference, publish_date) VALUES
+  INSERT INTO researchPapers (paper_id, paper_title, conference, publish_date) VALUES
   
   ( 1, "Is college education in line with the job market Part1", NULL, "2022-07-01"),
   ( 2, "Is college education in line with the job market Part2", NULL, "2022-09-01"),
@@ -75,11 +74,11 @@ const researchPapersData = `
   `;
 
 const registrationData = `
-  INSERT INTO enrollment (registration_id, author_no, paper_id) VALUES
+  INSERT INTO registration (registration_id, author_no, paper_id) VALUES
     ( 1, 13,20),
     ( 2, 14,21),
     ( 3, 15,22),
-    ( 4, 1,23),
+    ( 4, 1,2),
     ( 5, 2,24),
     ( 6, 3,25),
     ( 7, 3,26),

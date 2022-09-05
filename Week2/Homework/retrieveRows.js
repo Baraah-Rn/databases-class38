@@ -2,7 +2,7 @@ const numOfAuthWrotePapers = `
   SELECT 
     r.paper_id, r.paper_title, 
     count(e.paper_id) as authorsCount 
-  FROM research_Papers r
+  FROM researchPapers r
   LEFT JOIN registration e
   ON e.paper_id = r.paper_id
   GROUP BY r.paper_id;

@@ -15,11 +15,10 @@ const CONNECTION_CONFIG ={
   port: 3306
 
 };
-
 const createDB = [
   "DROP DATABASE IF EXISTS mySQLDatabase;",
   "CREATE DATABASE mySQLDatabase;",
-  "USE mySQLDatabase;",
+  "USE mySQLDatabase;"
 ];
 
 
