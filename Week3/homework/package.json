@@ -1,7 +1,8 @@
 {
-  "name": "transaction",
+  "name": "homework",
   "version": "1.0.0",
-  "main": "transaction.js",
+  "description": "",
+  "main": "SQLinjection.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,8 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mysql": "^2.18.1",
-    "until": "^0.1.1"
-  },
-  "description": ""
+    "mysql": "^2.18.1"
+  }
 }
