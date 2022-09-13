@@ -8,7 +8,7 @@
 
    |members      |     venues        | dinner            |  dinner_includes | foods            | reservations    |
    | ----------- |-----------------  | ----------------- | ---------------- | ---------------- | --------------- |
-   | member_id   |     venue_code	   | dinner_id         |  fk_(dinner_id)  |food_code         | reservations_id |
+   | member_id   |     venue_code    | dinner_id         |  fk_(dinner_id)  |food_code         | reservations_id |
    | member_name | venue_description |                   | 	fk_(food_code)  | food_description | fk\_(member_id) |
    | zipCode     |                   |                   |                  |                  | fk\_(dinner_id) |
    | street      |                   |                   |                  |                  | date            |
