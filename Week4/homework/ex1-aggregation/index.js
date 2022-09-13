@@ -1,6 +1,9 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 import * as dotenv from "dotenv";
 import { insertData } from "./insertData.js";
+import {countTotalPopulation} from "./totalPopulation.js";
+import {informationOfContinents} from "./continentInfo.js"
+
 
 dotenv.config();
 
@@ -14,11 +17,13 @@ const createDB = async (client) => {
   
 
   const main = async () => {
-    const client = new MongoClient(process.env.MONGODB_URL, {
+    const client = new MongoClient(process.env.MONGODB_URL
+      ,{
       useNewUrlParser: true,
-      useUnifiedTopology: true,
+       useUnifiedTopology: true,
       serverApi: ServerApiVersion.v1,
-    });
+    }
+    );
     try {
       await createDB(client);
       await insertData(client);
