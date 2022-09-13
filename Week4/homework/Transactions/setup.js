@@ -11,6 +11,6 @@ export const createAccount = async (client, accountNumber, balance) => {
         },
       ],
     };
-    await client.db("bank").collection("accounts").insertOne(account);
-    console.log(`account number ${accountNumber} is created`);
+    await client.db("wallet").collection("accounts").insertOne(account);
+    console.log(` The account number: ${accountNumber} is created`);
   };
