@@ -9,19 +9,19 @@ const CONNECTION_CONFIG = {
   password: "hyfpassword",
 };
 
-const SEND_AMOUNT = `
+const SendAmount = `
   UPDATE account
   SET balance = balance - 1000
   WHERE account_number = 101;
 `;
 
-const RECEIPT_AMOUNT = `
+const ReceiptAmount = `
   UPDATE account
   SET balance = balance + 1000
   WHERE account_number = 102;
 `;
 
-const transfer = [SEND_AMOUNT, RECEIPT_AMOUNT];
+const transfer = [SendAmount, ReceiptAmount];
 const createDb = [
   "DROP DATABASE IF EXISTS wallet;",
   "CREATE DATABASE wallet;",
